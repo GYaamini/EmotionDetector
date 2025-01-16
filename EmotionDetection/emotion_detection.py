@@ -18,7 +18,15 @@ def emotion_detector(text_to_analyse):
 
         return emotions
     
-    return None
+    if response.status_code == 400:
+
+        return {"anger": None, 
+                "disgust": None, 
+                "fear": None, 
+                "joy": None, 
+                "sadness": None, 
+                "dominant_emotion": None
+                }
 
 if __name__ == "__main__":
     text = input("Enter the text input : ")
